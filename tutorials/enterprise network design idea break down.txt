@@ -1,0 +1,89 @@
+Enterprise Network Design for Cisco Packet Tracer
+
+------------------------------------------------------------
+1. TOPOLOGY DESIGN OVERVIEW:
+------------------------------------------------------------
+
+- 3-Layer Hierarchical Model:
+  - **Core Layer:**
+    - 2 Routers (R1, R2) for redundancy (connected to 2 ISPs)
+    - Connect to Distribution Layer via Multilayer switches
+
+  - **Distribution Layer:**
+    - 2 Multilayer Switches (MLS1, MLS2)
+    - Handles routing between VLANs
+    - Runs OSPF/EIGRP routing protocol
+    - Connected redundantly to Access Layer
+
+  - **Access Layer:**
+    - Layer 2 Switches for each department:
+      - HR_SW, IT_SW, Sales_SW, Finance_SW
+    - Connects PCs, Printers, IP Phones
+
+  - **Edge Layer:**
+    - Firewall (could be simulated with ACLs and an extra router)
+    - Internet Connection
+
+------------------------------------------------------------
+2. IP ADDRESSING PLAN (Sample - Class B):
+------------------------------------------------------------
+- Network: 172.16.0.0/16
+- Subnetted by departments:
+  - HR:        172.16.10.0/24
+  - IT:        172.16.20.0/24
+  - Finance:   172.16.30.0/24
+  - Sales:     172.16.40.0/24
+  - Server Farm: 172.16.100.0/24
+
+------------------------------------------------------------
+3. VLAN PLAN:
+------------------------------------------------------------
+- VLAN 10: HR
+- VLAN 20: IT
+- VLAN 30: Finance
+- VLAN 40: Sales
+- VLAN 50: Servers
+- VLAN 99: Management VLAN
+
+------------------------------------------------------------
+4. KEY CONFIGURATIONS:
+------------------------------------------------------------
+- **Switches:**
+  - Configure trunk ports
+  - Assign access ports to respective VLANs
+  - Configure port security (optional)
+
+- **Routers / MLS:**
+  - Configure sub-interfaces for inter-VLAN routing
+  - Configure routing protocol (OSPF/EIGRP)
+  - Setup NAT for Internet access
+
+- **DHCP Server:**
+  - Assign dynamic IP addresses to hosts in each VLAN
+
+- **DNS/Web/Mail Servers:**
+  - Place inside Server VLAN (VLAN 50)
+  - Assign static IPs
+
+- **Firewall Simulation:**
+  - Use extended ACLs on the edge router to simulate filtering
+
+------------------------------------------------------------
+5. TESTING:
+------------------------------------------------------------
+- Ping between VLANs
+- Test DHCP functionality
+- Test DNS and web server access
+- Test Internet connectivity
+- Test routing failover
+
+------------------------------------------------------------
+6. OPTIONAL ADVANCED FEATURES:
+------------------------------------------------------------
+- Configure EtherChannel between distribution and core
+- Enable SSH access on switches
+- HSRP between core routers
+- SNMP monitoring simulation
+
+------------------------------------------------------------
+This design will give you a realistic simulation of an enterprise-grade network in Packet Tracer, suitable for CCNA and CCNP practice. Let me know if you’d like a `.pkt` file or config samples.

@@ -1,0 +1,168 @@
+
+🧾 ENTERPRISE NETWORK DESIGN CONFIGURATION - SAMPLE SCRIPT
+##############################
+# BASIC SWITCH CONFIGURATION
+##############################
+
+# Common on all switches
+hostname SW_NAME
+no ip domain-lookup
+enable secret cisco
+line con 0
+ password cisco
+ login
+line vty 0 4
+ password cisco
+ login
+ transport input ssh
+crypto key generate rsa
+ip domain-name imzi.local
+username egide secret imzitech
+service password-encryption
+banner motd ^Authorized Access Only!^
+
+##############################
+# VLAN CONFIGURATION (On MLS1 and Access Switches)
+##############################
+
+vlan 10
+ name HR
+vlan 20
+ name IT
+vlan 30
+ name Finance
+vlan 40
+ name Sales
+vlan 50
+ name Servers
+vlan 99
+ name Management
+
+interface range fa0/1 - 12
+ switchport mode access
+ switchport access vlan 10
+
+interface range fa0/13 - 24
+ switchport mode access
+ switchport access vlan 20
+
+interface gi0/1
+ switchport trunk encapsulation dot1q
+ switchport mode trunk
+
+##############################
+# INTER-VLAN ROUTING (MLS1)
+##############################
+
+interface vlan10
+ ip address 172.16.10.1 255.255.255.0
+interface vlan20
+ ip address 172.16.20.1 255.255.255.0
+interface vlan30
+ ip address 172.16.30.1 255.255.255.0
+interface vlan40
+ ip address 172.16.40.1 255.255.255.0
+interface vlan50
+ ip address 172.16.100.1 255.255.255.0
+interface vlan99
+ ip address 172.16.99.1 255.255.255.0
+
+ip routing
+
+##############################
+# ROUTING CONFIGURATION (EIGRP or OSPF)
+##############################
+
+# EIGRP
+router eigrp 10
+ network 172.16.0.0
+ no auto-summary
+
+# OR OSPF
+router ospf 1
+ network 172.16.0.0 0.0.255.255 area 0
+
+##############################
+# DHCP CONFIGURATION
+##############################
+
+ip dhcp pool HR
+ network 172.16.10.0 255.255.255.0
+ default-router 172.16.10.1
+ dns-server 8.8.8.8
+
+ip dhcp pool IT
+ network 172.16.20.0 255.255.255.0
+ default-router 172.16.20.1
+ dns-server 8.8.8.8
+
+ip dhcp excluded-address 172.16.10.1 172.16.10.10
+
+##############################
+# NAT CONFIGURATION (On Edge Router)
+##############################
+
+interface g0/0
+ ip address 192.0.2.2 255.255.255.0
+ ip nat outside
+
+interface g0/1
+ ip address 172.16.0.1 255.255.0.0
+ ip nat inside
+
+access-list 1 permit 172.16.0.0 0.0.255.255
+ip nat inside source list 1 interface g0/0 overload
+
+##############################
+# ETHERCHANNEL CONFIGURATION (Between Core and Dist)
+##############################
+
+interface range g0/1 - 2
+ channel-group 1 mode active
+interface Port-channel1
+ switchport mode trunk
+
+##############################
+# STP / RSTP CONFIGURATION
+##############################
+
+spanning-tree mode rapid-pvst
+spanning-tree vlan 10,20,30,40 priority 24576
+
+##############################
+# ACL EXAMPLE (BLOCK WEB TO HR)
+##############################
+
+access-list 100 deny tcp 172.16.10.0 0.0.0.255 any eq 80
+access-list 100 permit ip any any
+interface g0/1
+ ip access-group 100 in
+
+##############################
+# HSRP (Optional for Gateway Redundancy)
+##############################
+
+interface vlan10
+ standby 1 ip 172.16.10.254
+ standby 1 priority 110
+ standby 1 preempt
+
+##############################
+# VERIFY & TEST
+##############################
+
+# Check VLANs
+show vlan brief
+
+# Verify Routing
+show ip route
+
+# Ping Tests
+ping 172.16.20.1
+ping 8.8.8.8
+
+# DHCP Verification
+show ip dhcp binding
+
+# NAT Translation
+show ip nat translations
