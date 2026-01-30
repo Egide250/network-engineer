@@ -1059,76 +1059,22 @@
     });
     animateElements.forEach((element) => observer.observe(element));
   </script>
+
+
+  <!-- Bootstrap JS Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Custom JS for Navbar Toggler --> 
   <script>
-document.addEventListener("DOMContentLoaded", function() {
-  const navbar = document.querySelector('.navbar');
-  const navLinks = document.querySelectorAll('.nav-link');
-  const sections = document.querySelectorAll('section[id]');
-  const toggler = document.querySelector('.custom-toggler');
-  const menu = document.getElementById('navmenu');
-  const iconOpen = toggler.querySelector('.toggler-icon-open');
-  const iconClose = toggler.querySelector('.toggler-icon-close');
+    const toggler = document.querySelector('.custom-toggler');
+    const iconOpen = toggler.querySelector('.toggler-icon-open');
+    const iconClose = toggler.querySelector('.toggler-icon-close');
 
-  // Toggle ☰ / ✕ properly using Bootstrap events
-  menu.addEventListener('show.bs.collapse', () => {
-    iconOpen.classList.add('d-none');
-    iconClose.classList.remove('d-none');
-  });
-
-  menu.addEventListener('hide.bs.collapse', () => {
-    iconOpen.classList.remove('d-none');
-    iconClose.classList.add('d-none');
-  });
-
-  // Smooth highlighting for links
-  function highlightMenu() {
-    const scrollPos = window.scrollY + navbar.offsetHeight + 10;
-
-    sections.forEach(section => {
-      const sectionTop = section.offsetTop;
-      const sectionBottom = sectionTop + section.offsetHeight;
-      const id = section.getAttribute('id');
-
-      navLinks.forEach(link => {
-        const href = link.getAttribute('href');
-
-        // Only match internal links like #about, #skills, etc.
-        if (href && href.startsWith('#')) {
-          if (scrollPos >= sectionTop && scrollPos < sectionBottom) {
-            link.classList.add('active');
-          } else {
-            link.classList.remove('active');
-          }
-        }
-      });
+    toggler.addEventListener('click', () => {
+      iconOpen.classList.toggle('d-none');
+      iconClose.classList.toggle('d-none');
     });
-  }
-
-  window.addEventListener('scroll', highlightMenu);
-  window.addEventListener('resize', highlightMenu);
-  highlightMenu(); // initial highlight
-
-  // Optional: smooth scroll for all nav links
-  navLinks.forEach(link => {
-    if (link.getAttribute('href').startsWith('#')) {
-      link.addEventListener('click', e => {
-        e.preventDefault();
-        const target = document.querySelector(link.getAttribute('href'));
-        const offset = navbar.offsetHeight;
-        window.scrollTo({
-          top: target.offsetTop - offset + 1,
-          behavior: 'smooth'
-        });
-        // Collapse navbar on mobile after click
-        if (menu.classList.contains('show')) {
-          bootstrap.Collapse.getInstance(menu).hide();
-        }
-      });
-    }
-  });
-
-});
-</script>
+  </script>
+  
 
 </body>
 
