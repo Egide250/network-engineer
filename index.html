@@ -136,6 +136,19 @@
       width: 100%;
     }
 
+/* Small devices */
+@media (max-width: 768px) {
+  .navbar-brand,.badge {
+    font-size: 1.2rem; /* smaller on tablets and mobiles */
+  }
+
+  /* Optional: make the icon smaller too */
+  .navbar-brand i {
+    font-size: 1.2rem;
+  }
+}
+
+
     /* ===============================
    GLOBAL SECTION SPACING
 ================================ */
@@ -354,6 +367,113 @@
       width: 100%;
       height: 700px;
     }
+
+    #certifications .card:hover {
+      transform: translateY(-12px) scale(1.02);
+    }
+
+    /* Make cards structured vertically */
+    #certifications .card {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    /* Push button to bottom */
+    .cert-btn {
+      margin-top: auto;
+    }
+
+    /* Optional — improves spacing */
+    .card-text {
+      margin-bottom: 20px;
+    }
+
+    .cert-btn {
+      font-family: var(--font-heading);
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      background: transparent;
+      transition: .3s;
+    }
+
+    .cert-btn i {
+      transform: rotate(-45deg);
+      transition: .3s;
+    }
+
+    .cert-btn:hover {
+      background: var(--accent);
+      color: #000;
+      box-shadow: 0 8px 22px rgba(255, 193, 7, .35);
+    }
+
+    .cert-btn:hover i {
+      transform: rotate(0) translateX(4px);
+    }
+
+
+
+    /* Flagship project */
+.flagship-card{
+  border:1px solid rgba(255,193,7,.25);
+  background:linear-gradient(145deg,#0d0d0d,#111);
+  transition:.4s;
+  overflow:hidden;
+}
+
+.flagship-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 30px 80px rgba(255,193,7,.12);
+}
+
+.featured-label{
+  color:var(--accent);
+  letter-spacing:2px;
+  font-size:.85rem;
+  font-weight:bold;
+}
+
+.impact-list{
+  list-style:none;
+  padding:0;
+  margin-bottom:1rem;
+}
+
+.impact-list li{
+  position:relative;
+  padding-left:22px;
+  margin-bottom:8px;
+}
+
+.impact-list li::before{
+  content:"✔";
+  color:var(--accent);
+  position:absolute;
+  left:0;
+}
+
+/* Project cards */
+.project-card{
+  border:1px solid #2a2a2a;
+  transition:.35s;
+}
+
+.project-card:hover{
+  transform:translateY(-12px);
+  box-shadow:0 20px 50px rgba(255,193,7,.12);
+}
+
+/* Align buttons in cards at bottom */
+.project-card .cert-btn{
+  margin-top:auto;
+}
   </style>
 </head>
 
@@ -491,7 +611,8 @@
           <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body p-0">
-          <iframe src="https://egide250.github.io/resume/" width="100%" height="700" style="border:none;" allowfullscreen></iframe>
+          <iframe src="https://egide250.github.io/resume/" width="100%" height="700" style="border:none;"
+            allowfullscreen></iframe>
         </div>
       </div>
     </div>
@@ -502,28 +623,81 @@
   <!-- Skills Section -->
   <section id="skills" class="bg-dark">
     <div class="container">
-      <h2 class="section-title text-center">Skills</h2>
+      <h2 class="section-title text-center">Technical Expertise</h2>
+
       <div class="row g-4">
+
+        <!-- Networking -->
         <div class="col-md-4">
           <div class="card text-center p-4 animate-on-scroll h-100">
             <i class="bi bi-router text-warning display-4 mb-3"></i>
-            <h3 class="card-title">Routing & Switching</h3>
-            <p class="card-text">Expertise in Cisco IOS, Juniper, and advanced routing protocols like OSPF, BGP, and
-              EIGRP.</p>
+            <h3 class="card-title">Network Engineering</h3>
+            <p class="card-text">
+              Advanced experience in routing & switching, network security,
+              troubleshooting, and automation. Skilled with Cisco CLI and
+              enterprise network design using protocols such as OSPF, BGP, and EIGRP.
+            </p>
           </div>
         </div>
+
+        <!-- Programming -->
         <div class="col-md-4">
           <div class="card text-center p-4 animate-on-scroll h-100">
-            <i class="bi bi-shield-lock text-warning display-4 mb-3"></i>
-            <h3 class="card-title">Network Security</h3>
-            <p class="card-text">Implementing firewalls, VPNs, and intrusion detection systems to secure networks.</p>
+            <i class="bi bi-code-slash text-warning display-4 mb-3"></i>
+            <h3 class="card-title">Programming & Scripting</h3>
+            <p class="card-text">
+              Proficient in Java, Python, PHP, and Bash scripting for automation,
+              backend processes, and infrastructure management.
+            </p>
           </div>
         </div>
+
+        <!-- Databases -->
         <div class="col-md-4">
           <div class="card text-center p-4 animate-on-scroll h-100">
-            <i class="bi bi-cloud text-warning display-4 mb-3"></i>
-            <h3 class="card-title">Cloud Networking</h3>
-            <p class="card-text">Designing and managing cloud-based networks on AWS, Azure, and Google Cloud.</p>
+            <i class="bi bi-database text-warning display-4 mb-3"></i>
+            <h3 class="card-title">Database Management</h3>
+            <p class="card-text">
+              Hands-on experience with MS SQL, Oracle, PostgreSQL, MySQL,
+              and MariaDB — focusing on performance, reliability, and secure data handling.
+            </p>
+          </div>
+        </div>
+
+        <!-- Systems -->
+        <div class="col-md-4">
+          <div class="card text-center p-4 animate-on-scroll h-100">
+            <i class="bi bi-server text-warning display-4 mb-3"></i>
+            <h3 class="card-title">Systems Administration</h3>
+            <p class="card-text">
+              Administration of Windows, Linux/Unix, and iOS environments,
+              ensuring system stability, security, and operational efficiency.
+            </p>
+          </div>
+        </div>
+
+        <!-- Tools -->
+        <div class="col-md-4">
+          <div class="card text-center p-4 animate-on-scroll h-100">
+            <i class="bi bi-tools text-warning display-4 mb-3"></i>
+            <h3 class="card-title">Professional Tools</h3>
+            <p class="card-text">
+              Experienced with Wireshark for packet analysis, PowerShell for automation,
+              and Cisco CLI for advanced network configuration and diagnostics.
+            </p>
+          </div>
+        </div>
+
+        <!-- Emerging Tech -->
+        <div class="col-md-4">
+          <div class="card text-center p-4 animate-on-scroll h-100">
+            <i class="bi bi-cpu text-warning display-4 mb-3"></i>
+            <h3 class="card-title">Emerging Technologies</h3>
+            <p class="card-text">
+              Actively exploring Cloud Computing, Artificial Intelligence,
+              Software-Defined Networking (SDN), and Internet of Things (IoT)
+              to build future-ready infrastructure.
+            </p>
           </div>
         </div>
       </div>
@@ -533,56 +707,284 @@
   <!-- Certifications Section -->
   <section id="certifications">
     <div class="container">
-      <h2 class="section-title text-center">Certifications</h2>
+      <h2 class="section-title text-center">Professional Certifications</h2>
+
       <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card text-center p-4 animate-on-scroll h-100">
+
+        <!-- CCNA -->
+        <div class="col-md-3">
+          <div class="card text-center p-4 animate-on-scroll h-100" data-bs-toggle="modal" data-bs-target="#ccnaModal"
+            style="cursor:pointer;">
+
             <h3 class="card-title">CCNA</h3>
-            <p class="card-text">Cisco Certified Network Associate.</p>
+            <p class="card-text">
+              Cisco Certified Network Associate — validates expertise in
+              networking fundamentals, security, and automation.
+            </p>
+            <!-- BUTTON -->
+            <button class="cert-btn" data-bs-toggle="modal" data-bs-target="#ccnaModal">
+
+              <span>View Certificate</span>
+              <i class="bi bi-arrow-up-right"></i>
+
+            </button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card text-center p-4 animate-on-scroll h-100">
-            <h3 class="card-title">CCNP Candidate</h3>
-            <p class="card-text">Currently pursuing Cisco Certified Network Professional certification.</p>
+
+        <!-- ISC2 -->
+        <div class="col-md-3">
+          <div class="card text-center p-4 animate-on-scroll h-100" data-bs-toggle="modal" data-bs-target="#isc2Modal"
+            style="cursor:pointer;">
+
+            <h3 class="card-title">ISC² Certified in Cybersecurity</h3>
+            <p class="card-text">
+              Globally recognized certification demonstrating strong
+              foundations in modern cybersecurity practices.
+            </p>
+            <!-- BUTTON -->
+            <button class="cert-btn" data-bs-toggle="modal" data-bs-target="#isc2Modal">
+
+              <span>View Certificate</span>
+              <i class="bi bi-arrow-up-right"></i>
+
+            </button>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="card text-center p-4 animate-on-scroll h-100">
-            <h3 class="card-title">AWS Advanced Networking</h3>
-            <p class="card-text">specializing in cloud networking solutions.</p>
+
+        <!-- Fortinet -->
+        <div class="col-md-3">
+          <div class="card text-center p-4 animate-on-scroll h-100" data-bs-toggle="modal"
+            data-bs-target="#fortinetModal" style="cursor:pointer;">
+
+            <h3 class="card-title">Fortinet FCA</h3>
+            <p class="card-text">
+              Fortinet Certified Associate in Cybersecurity with focus on
+              threat protection and secure network architecture.
+            </p>
+            <!-- BUTTON -->
+            <button class="cert-btn" data-bs-toggle="modal" data-bs-target="#fortinetModal">
+
+              <span>View Certificate</span>
+              <i class="bi bi-arrow-up-right"></i>
+
+            </button>
           </div>
         </div>
+
+        <!-- Google -->
+        <div class="col-md-3">
+          <div class="card text-center p-4 animate-on-scroll h-100" data-bs-toggle="modal" data-bs-target="#googleModal"
+            style="cursor:pointer;">
+
+            <h3 class="card-title">Google IT Support</h3>
+            <p class="card-text">
+              Professional certificate covering system administration,
+              troubleshooting, networking, and IT infrastructure.
+            </p>
+            <!-- BUTTON -->
+            <button class="cert-btn" data-bs-toggle="modal" data-bs-target="#googleModal">
+
+              <span>View Certificate</span>
+              <i class="bi bi-arrow-up-right"></i>
+
+            </button>
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- Projects Section -->
-  <section id="projects" class="bg-dark">
-    <div class="container">
-      <h2 class="section-title text-center">Projects</h2>
-      <div class="row g-4">
-        <div class="col-md-4">
-          <div class="card p-4 animate-on-scroll h-100">
-            <h3 class="card-title">Enterprise Network Design</h3>
-            <p class="card-text">Designed and implemented a scalable network for a Fortune 500 company.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-4 animate-on-scroll h-100">
-            <h3 class="card-title">Data Center Migration</h3>
-            <p class="card-text">Migrated on-premises infrastructure to AWS with zero downtime.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card p-4 animate-on-scroll h-100">
-            <h3 class="card-title">Network Security Overhaul</h3>
-            <p class="card-text">Implemented advanced security measures to protect against cyber threats.</p>
-          </div>
+  <!-- ccna cert modal  -->
+  <div class="modal fade" id="ccnaModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="images/ccna.jpg" class="img-fluid rounded">
         </div>
       </div>
     </div>
-  </section>
+  </div>
+  <!-- end of ccna modal -->
+
+  <!-- isc2 cert modal  -->
+  <div class="modal fade" id="isc2Modal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="images/isc2.jpg" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of isc2 modal -->
+  <!-- fortinet cert modal  -->
+  <div class="modal fade" id="fortinetModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="images/fortinet.jpg" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of fortinet modal -->
+  <!-- google cert modal  -->
+  <div class="modal fade" id="googleModal">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content bg-dark">
+        <div class="modal-body text-center">
+          <img src="images/google.jpg" class="img-fluid rounded">
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end of google modal -->
+
+
+  <!-- Projects Section -->
+ <section id="projects" class="bg-dark">
+  <div class="container">
+
+    <!-- ============================
+         FLAGSHIP PROJECT (TOP)
+    ============================ -->
+    <div class="card flagship-card p-5 mb-5 animate-on-scroll">
+
+      <div class="row align-items-center">
+
+        <!-- LEFT SIDE -->
+        <div class="col-lg-7">
+
+          <span class="featured-label mb-3">⭐ FLAGSHIP PROJECT</span>
+          <h2 class="section-title mb-3">Enterprise Multi-Tier Campus Network Architecture</h2>
+
+          <p class="lead text-light mb-4">
+            Designed and deployed a production-style hybrid network integrating on-premises infrastructure
+            with cloud services. Focused on high availability, redundancy, and secure communication.
+          </p>
+
+          <!-- TECH STACK -->
+          <div class="mb-4">
+            <span class="badge bg-warning text-dark">Cisco</span>
+            <span class="badge bg-warning text-dark">VLAN</span>
+            <span class="badge bg-warning text-dark">OSPF</span>
+            <span class="badge bg-warning text-dark">HSRP</span>
+            <span class="badge bg-warning text-dark">ACL</span>
+            <span class="badge bg-warning text-dark">STP</span>
+          </div>
+
+          <!-- IMPACT METRICS -->
+          <ul class="impact-list">
+            <li>Supports 1,000+ concurrent users</li>
+            <li>Reduced broadcast traffic by 65%</li>
+            <li>Eliminated single points of failure</li>
+            <li>Optimized failover and redundancy</li>
+          </ul>
+
+          <!-- BUTTON -->
+          <a href="#" class="cert-btn mt-3">
+            View Architecture
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+
+        <!-- RIGHT SIDE (IMAGE) -->
+        <div class="col-lg-5 text-center">
+          <img src="images/flagship-diagram.png" alt="Flagship Network Diagram" 
+               class="img-fluid rounded shadow-lg">
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ============================
+         OTHER FEATURED PROJECTS
+    ============================ -->
+    <h2 class="section-title text-center mb-4">Featured Engineering Projects</h2>
+    <div class="row g-4">
+
+      <!-- Project Card Example -->
+      <div class="col-lg-4 col-md-6">
+        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+
+          <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Campus Network">
+
+          <h3 class="card-title">Campus Network Deployment</h3>
+
+          <div class="mb-3">
+            <span class="badge bg-warning text-dark">Cisco</span>
+            <span class="badge bg-warning text-dark">VLAN</span>
+            <span class="badge bg-warning text-dark">OSPF</span>
+            <span class="badge bg-warning text-dark">ACL</span>
+          </div>
+
+          <p class="card-text mb-3">
+            Designed and deployed a secure multi-layer campus network, segmenting departments using VLANs and dynamic routing.
+          </p>
+
+          <a href="#" class="cert-btn mt-auto">
+            View Project
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+
+          <img src="images/linux-server.png" class="img-fluid rounded mb-3" alt="Linux Servers">
+
+          <h3 class="card-title">Linux Server Infrastructure</h3>
+
+          <div class="mb-3">
+            <span class="badge bg-warning text-dark">Linux</span>
+            <span class="badge bg-warning text-dark">Bash</span>
+            <span class="badge bg-warning text-dark">MySQL</span>
+          </div>
+
+          <p class="card-text mb-3">
+            Configured and administered production-ready Linux servers with automated backups and database optimization.
+          </p>
+
+          <a href="#" class="cert-btn mt-auto">
+            View Project
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6">
+        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+
+          <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Network Security">
+
+          <h3 class="card-title">Network Security Hardening</h3>
+
+          <div class="mb-3">
+            <span class="badge bg-warning text-dark">Firewall</span>
+            <span class="badge bg-warning text-dark">VPN</span>
+            <span class="badge bg-warning text-dark">Wireshark</span>
+          </div>
+
+          <p class="card-text mb-3">
+            Strengthened network defenses with firewalls, VPNs, and traffic monitoring, reducing attack surface significantly.
+          </p>
+
+          <a href="#" class="cert-btn mt-auto">
+            View Project
+            <i class="bi bi-arrow-up-right"></i>
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
 
   <!-- Contact Section -->
   <section id="contact" class="bg-dark text-light py-5">
