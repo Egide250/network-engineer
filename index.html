@@ -136,50 +136,55 @@
       width: 100%;
     }
 
-/* Navbar brand responsive */
-.navbar-brand,.lead {
-  font-size: 1.8rem;
-  transition: font-size 0.3s ease;
-}
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 1.2rem;
-  }
-  .navbar-brand i {
-    font-size: 1.2rem;
-  }
-}
+    /* Navbar brand responsive */
+    .navbar-brand,
+    .lead {
+      font-size: 1.8rem;
+      transition: font-size 0.3s ease;
+    }
 
-/* Toggle button */
-.custom-toggler {
-  border: none;
-  background: transparent;
-  font-size: 1.5rem;
-  position: relative;
-  z-index: 1050;
-}
-.custom-toggler .toggler-icon-open,
-.custom-toggler .toggler-icon-close {
-  color: #ffc107;
-  font-weight: bold;
-  font-size: 1.5rem;
-}
+    @media (max-width: 768px) {
+      .navbar-brand {
+        font-size: 1.2rem;
+      }
 
-/* Active link underline */
-.navbar-nav .nav-link.active {
-  position: relative;
-  color: #ffc107 !important;
-}
-.navbar-nav .nav-link.active::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 3px;
-  background: #ffc107;
-  border-radius: 2px;
-}
+      .navbar-brand i {
+        font-size: 1.2rem;
+      }
+    }
+
+    /* Toggle button */
+    .custom-toggler {
+      border: none;
+      background: transparent;
+      font-size: 1.5rem;
+      position: relative;
+      z-index: 1050;
+    }
+
+    .custom-toggler .toggler-icon-open,
+    .custom-toggler .toggler-icon-close {
+      color: #ffc107;
+      font-weight: bold;
+      font-size: 1.5rem;
+    }
+
+    /* Active link underline */
+    .navbar-nav .nav-link.active {
+      position: relative;
+      color: #ffc107 !important;
+    }
+
+    .navbar-nav .nav-link.active::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 100%;
+      height: 3px;
+      background: #ffc107;
+      border-radius: 2px;
+    }
 
 
     /* ===============================
@@ -454,59 +459,59 @@
 
 
     /* Flagship project */
-.flagship-card{
-  border:1px solid rgba(255,193,7,.25);
-  background:linear-gradient(145deg,#0d0d0d,#111);
-  transition:.4s;
-  overflow:hidden;
-}
+    .flagship-card {
+      border: 1px solid rgba(255, 193, 7, .25);
+      background: linear-gradient(145deg, #0d0d0d, #111);
+      transition: .4s;
+      overflow: hidden;
+    }
 
-.flagship-card:hover{
-  transform:translateY(-10px);
-  box-shadow:0 30px 80px rgba(255,193,7,.12);
-}
+    .flagship-card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 30px 80px rgba(255, 193, 7, .12);
+    }
 
-.featured-label{
-  color:var(--accent);
-  letter-spacing:2px;
-  font-size:.85rem;
-  font-weight:bold;
-}
+    .featured-label {
+      color: var(--accent);
+      letter-spacing: 2px;
+      font-size: .85rem;
+      font-weight: bold;
+    }
 
-.impact-list{
-  list-style:none;
-  padding:0;
-  margin-bottom:1rem;
-}
+    .impact-list {
+      list-style: none;
+      padding: 0;
+      margin-bottom: 1rem;
+    }
 
-.impact-list li{
-  position:relative;
-  padding-left:22px;
-  margin-bottom:8px;
-}
+    .impact-list li {
+      position: relative;
+      padding-left: 22px;
+      margin-bottom: 8px;
+    }
 
-.impact-list li::before{
-  content:"✔";
-  color:var(--accent);
-  position:absolute;
-  left:0;
-}
+    .impact-list li::before {
+      content: "✔";
+      color: var(--accent);
+      position: absolute;
+      left: 0;
+    }
 
-/* Project cards */
-.project-card{
-  border:1px solid #2a2a2a;
-  transition:.35s;
-}
+    /* Project cards */
+    .project-card {
+      border: 1px solid #2a2a2a;
+      transition: .35s;
+    }
 
-.project-card:hover{
-  transform:translateY(-12px);
-  box-shadow:0 20px 50px rgba(255,193,7,.12);
-}
+    .project-card:hover {
+      transform: translateY(-12px);
+      box-shadow: 0 20px 50px rgba(255, 193, 7, .12);
+    }
 
-/* Align buttons in cards at bottom */
-.project-card .cert-btn{
-  margin-top:auto;
-}
+    /* Align buttons in cards at bottom */
+    .project-card .cert-btn {
+      margin-top: auto;
+    }
   </style>
 </head>
 
@@ -514,30 +519,31 @@
 
   <!-- Navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-black shadow-lg fixed-top">
-  <div class="container">
-    <!-- Navbar Brand -->
-    <a href="#" class="navbar-brand fw-bold text-warning navbar-brand-responsive">
-      <i class="bi bi-person-circle me-2"></i> Egide Nsengiyumva
-    </a>
+    <div class="container">
+      <!-- Navbar Brand -->
+      <a href="#" class="navbar-brand fw-bold text-warning navbar-brand-responsive">
+        <i class="bi bi-person-circle me-2"></i> Egide Nsengiyumva
+      </a>
 
-    <!-- Toggler Button -->
-    <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu" aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="toggler-icon-open">&#9776;</span> <!-- ☰ -->
-      <span class="toggler-icon-close d-none">&times;</span> <!-- ✕ -->
-    </button>
+      <!-- Toggler Button -->
+      <button class="navbar-toggler custom-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu"
+        aria-controls="navmenu" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="toggler-icon-open">&#9776;</span> <!-- ☰ -->
+        <span class="toggler-icon-close d-none">&times;</span> <!-- ✕ -->
+      </button>
 
-    <!-- Navbar Links -->
-    <div class="collapse navbar-collapse" id="navmenu">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
-        <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
-        <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
-        <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
-      </ul>
+      <!-- Navbar Links -->
+      <div class="collapse navbar-collapse" id="navmenu">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#skills" class="nav-link">Skills</a></li>
+          <li class="nav-item"><a href="#certifications" class="nav-link">Certifications</a></li>
+          <li class="nav-item"><a href="#projects" class="nav-link">Projects</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </div>
     </div>
-  </div>
-</nav>
+  </nav>
 
 
   <!-- Showcase Section -->
@@ -873,148 +879,151 @@
 
 
   <!-- Projects Section -->
- <section id="projects" class="bg-dark">
-  <div class="container">
+  <section id="projects" class="bg-dark">
+    <div class="container">
 
-    <!-- ============================
+      <!-- ============================
          FLAGSHIP PROJECT (TOP)
     ============================ -->
-    <div class="card flagship-card p-5 mb-5 animate-on-scroll">
+      <div class="card flagship-card p-5 mb-5 animate-on-scroll">
 
-      <div class="row align-items-center">
+        <div class="row align-items-center">
 
-        <!-- LEFT SIDE -->
-        <div class="col-lg-7">
+          <!-- LEFT SIDE -->
+          <div class="col-lg-7">
 
-          <span class="featured-label mb-3">⭐ FLAGSHIP PROJECT</span>
-          <h2 class="section-title mb-3">Enterprise Multi-Tier Campus Network Architecture</h2>
+            <span class="featured-label mb-3">⭐ FLAGSHIP PROJECT</span>
+            <h2 class="section-title mb-3">Enterprise Multi-Tier Campus Network Architecture</h2>
 
-          <p class="lead text-light mb-4">
-            Designed and deployed a production-style hybrid network integrating on-premises infrastructure
-            with cloud services. Focused on high availability, redundancy, and secure communication.
-          </p>
+            <p class="text-light mb-3" style="font-size: clamp(0.9rem, 1.2vw, 1.25rem);">
+              Designed and deployed a production-style hybrid network integrating on-premises infrastructure
+              with cloud services. Focused on high availability, redundancy, and secure communication.
+            </p>
 
-          <!-- TECH STACK -->
-          <div class="mb-4">
-            <span class="badge bg-warning text-dark">Cisco</span>
-            <span class="badge bg-warning text-dark">VLAN</span>
-            <span class="badge bg-warning text-dark">OSPF</span>
-            <span class="badge bg-warning text-dark">HSRP</span>
-            <span class="badge bg-warning text-dark">ACL</span>
-            <span class="badge bg-warning text-dark">STP</span>
+
+            <!-- TECH STACK -->
+            <div class="mb-4">
+              <span class="badge bg-warning text-dark">Cisco</span>
+              <span class="badge bg-warning text-dark">VLAN</span>
+              <span class="badge bg-warning text-dark">OSPF</span>
+              <span class="badge bg-warning text-dark">HSRP</span>
+              <span class="badge bg-warning text-dark">ACL</span>
+              <span class="badge bg-warning text-dark">STP</span>
+            </div>
+
+            <!-- IMPACT METRICS -->
+            <ul class="impact-list">
+              <li>Supports 1,000+ concurrent users</li>
+              <li>Reduced broadcast traffic by 65%</li>
+              <li>Eliminated single points of failure</li>
+              <li>Optimized failover and redundancy</li>
+            </ul>
+
+            <!-- BUTTON -->
+            <a href="#" class="cert-btn mt-3">
+              View Architecture
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
           </div>
 
-          <!-- IMPACT METRICS -->
-          <ul class="impact-list">
-            <li>Supports 1,000+ concurrent users</li>
-            <li>Reduced broadcast traffic by 65%</li>
-            <li>Eliminated single points of failure</li>
-            <li>Optimized failover and redundancy</li>
-          </ul>
-
-          <!-- BUTTON -->
-          <a href="#" class="cert-btn mt-3">
-            View Architecture
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
+          <!-- RIGHT SIDE (IMAGE) -->
+          <div class="col-lg-5 text-center">
+            <img src="images/flagship-diagram.png" alt="Flagship Network Diagram" class="img-fluid rounded shadow-lg">
+          </div>
 
         </div>
-
-        <!-- RIGHT SIDE (IMAGE) -->
-        <div class="col-lg-5 text-center">
-          <img src="images/flagship-diagram.png" alt="Flagship Network Diagram" 
-               class="img-fluid rounded shadow-lg">
-        </div>
-
       </div>
-    </div>
 
-    <!-- ============================
+      <!-- ============================
          OTHER FEATURED PROJECTS
     ============================ -->
-    <h2 class="section-title text-center mb-4">Featured Engineering Projects</h2>
-    <div class="row g-4">
+      <h2 class="section-title text-center mb-4">Featured Engineering Projects</h2>
+      <div class="row g-4">
 
-      <!-- Project Card Example -->
-      <div class="col-lg-4 col-md-6">
-        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+        <!-- Project Card Example -->
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
 
-          <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Campus Network">
+            <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Campus Network">
 
-          <h3 class="card-title">Campus Network Deployment</h3>
+            <h3 class="card-title">Campus Network Deployment</h3>
 
-          <div class="mb-3">
-            <span class="badge bg-warning text-dark">Cisco</span>
-            <span class="badge bg-warning text-dark">VLAN</span>
-            <span class="badge bg-warning text-dark">OSPF</span>
-            <span class="badge bg-warning text-dark">ACL</span>
+            <div class="mb-3">
+              <span class="badge bg-warning text-dark">Cisco</span>
+              <span class="badge bg-warning text-dark">VLAN</span>
+              <span class="badge bg-warning text-dark">OSPF</span>
+              <span class="badge bg-warning text-dark">ACL</span>
+            </div>
+
+            <p class="card-text mb-3">
+              Designed and deployed a secure multi-layer campus network, segmenting departments using VLANs and dynamic
+              routing.
+            </p>
+
+            <a href="#" class="cert-btn mt-auto">
+              View Project
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
           </div>
-
-          <p class="card-text mb-3">
-            Designed and deployed a secure multi-layer campus network, segmenting departments using VLANs and dynamic routing.
-          </p>
-
-          <a href="#" class="cert-btn mt-auto">
-            View Project
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-
         </div>
-      </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
 
-          <img src="images/linux-server.png" class="img-fluid rounded mb-3" alt="Linux Servers">
+            <img src="images/linux-server.png" class="img-fluid rounded mb-3" alt="Linux Servers">
 
-          <h3 class="card-title">Linux Server Infrastructure</h3>
+            <h3 class="card-title">Linux Server Infrastructure</h3>
 
-          <div class="mb-3">
-            <span class="badge bg-warning text-dark">Linux</span>
-            <span class="badge bg-warning text-dark">Bash</span>
-            <span class="badge bg-warning text-dark">MySQL</span>
+            <div class="mb-3">
+              <span class="badge bg-warning text-dark">Linux</span>
+              <span class="badge bg-warning text-dark">Bash</span>
+              <span class="badge bg-warning text-dark">MySQL</span>
+            </div>
+
+            <p class="card-text mb-3">
+              Configured and administered production-ready Linux servers with automated backups and database
+              optimization.
+            </p>
+
+            <a href="#" class="cert-btn mt-auto">
+              View Project
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
           </div>
-
-          <p class="card-text mb-3">
-            Configured and administered production-ready Linux servers with automated backups and database optimization.
-          </p>
-
-          <a href="#" class="cert-btn mt-auto">
-            View Project
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-
         </div>
-      </div>
 
-      <div class="col-lg-4 col-md-6">
-        <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
+        <div class="col-lg-4 col-md-6">
+          <div class="card p-4 h-100 animate-on-scroll project-card d-flex flex-column">
 
-          <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Network Security">
+            <img src="images/campus-network.png" class="img-fluid rounded mb-3" alt="Network Security">
 
-          <h3 class="card-title">Network Security Hardening</h3>
+            <h3 class="card-title">Network Security Hardening</h3>
 
-          <div class="mb-3">
-            <span class="badge bg-warning text-dark">Firewall</span>
-            <span class="badge bg-warning text-dark">VPN</span>
-            <span class="badge bg-warning text-dark">Wireshark</span>
+            <div class="mb-3">
+              <span class="badge bg-warning text-dark">Firewall</span>
+              <span class="badge bg-warning text-dark">VPN</span>
+              <span class="badge bg-warning text-dark">Wireshark</span>
+            </div>
+
+            <p class="card-text mb-3">
+              Strengthened network defenses with firewalls, VPNs, and traffic monitoring, reducing attack surface
+              significantly.
+            </p>
+
+            <a href="#" class="cert-btn mt-auto">
+              View Project
+              <i class="bi bi-arrow-up-right"></i>
+            </a>
+
           </div>
-
-          <p class="card-text mb-3">
-            Strengthened network defenses with firewalls, VPNs, and traffic monitoring, reducing attack surface significantly.
-          </p>
-
-          <a href="#" class="cert-btn mt-auto">
-            View Project
-            <i class="bi bi-arrow-up-right"></i>
-          </a>
-
         </div>
-      </div>
 
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
   <!-- Contact Section -->
   <section id="contact" class="bg-dark text-light py-5">
@@ -1063,7 +1072,7 @@
 
   <!-- Bootstrap JS Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Custom JS for Navbar Toggler --> 
+  <!-- Custom JS for Navbar Toggler -->
   <script>
     const toggler = document.querySelector('.custom-toggler');
     const iconOpen = toggler.querySelector('.toggler-icon-open');
@@ -1074,7 +1083,7 @@
       iconClose.classList.toggle('d-none');
     });
   </script>
-  
+
 
 </body>
 
